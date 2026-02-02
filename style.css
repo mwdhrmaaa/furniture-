@@ -102,11 +102,12 @@ body {
     
     .hero {
         padding-top: 100px;
-        clip-path: none; /* Simplify for mobile to prevent overflow */
+        clip-path: none; 
+        min-height: auto;
     }
 
     .container {
-        padding: 0 16px;
+        padding: 0 20px;
     }
 }
 
@@ -731,6 +732,7 @@ body {
 
     .why-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .product-cards {
@@ -745,12 +747,12 @@ body {
     
     .product-cards {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 15px;
     }
 
     .filter-btns {
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 10px;
     }
 
     .filter-btn {
@@ -773,12 +775,25 @@ body {
     .btn-login span {
         display: none; /* Hide 'Login' text on tiny screens, keep icon */
     }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
     .product-cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+    }
+    
+    .hero-title {
+        font-size: 36px;
     }
     
     .header-actions {
