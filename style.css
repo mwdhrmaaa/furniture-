@@ -19,8 +19,10 @@
 body {
     font-family: var(--font-main);
     color: var(--text-color);
+    background-color: var(--bg-color);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -51,6 +53,53 @@ body {
 [data-theme="dark"] .card-image,
 [data-theme="dark"] .modal-image-col {
     background: #2a2a2a;
+}
+
+[data-theme="dark"] .hero {
+    background-color: #121812;
+}
+
+[data-theme="dark"] .hero-title {
+    color: #e0eee0;
+}
+
+[data-theme="dark"] .stats-float {
+    background: #1a1a1a;
+    color: var(--text-color);
+    border: 1px solid #333;
+}
+
+[data-theme="dark"] .btn-outline {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .filter-btn {
+    border-color: #444;
+}
+
+[data-theme="dark"] .btn-circle {
+    background: #2a332a;
+}
+
+[data-theme="dark"] .btn-circle:hover {
+    background: var(--primary-color);
+}
+
+[data-theme="dark"] .stats-float {
+    background: #252525;
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .btn-outline {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .btn-circle {
+    background: var(--secondary-color);
+}
+
+[data-theme="dark"] .btn-circle:hover {
+    background: var(--primary-color);
 }
 
 /* Header */
@@ -107,10 +156,19 @@ body {
     transition: var(--transition);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .btn-login {
     background: var(--secondary-color);
     color: white;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-login:hover {
@@ -155,6 +213,7 @@ body {
     align-items: center;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    transition: background-color 0.4s ease;
 }
 
 .hero-container {
@@ -270,7 +329,8 @@ body {
 
 .filter-btn {
     background: transparent;
-    border: 1px solid #ddd;
+    border: 1px solid var(--text-light);
+    color: var(--text-color);
     padding: 8px 24px;
     border-radius: 50px;
     cursor: pointer;
@@ -605,25 +665,6 @@ body {
     font-size: 18px;
 }
 
-.theme-toggle {
-    background: var(--card-background);
-    border: 1px solid var(--text-light);
-    color: var(--text-color);
-    padding: 8px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.theme-toggle:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
 
 /* Mobile Responsive */
 @media (max-width: 992px) {
