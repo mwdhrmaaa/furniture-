@@ -518,8 +518,8 @@ body {
 
 .product-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 }
 
 .product-card {
@@ -576,6 +576,10 @@ body {
 
     .why-grid {
         grid-template-columns: 1fr;
+    }
+
+    .product-cards {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
