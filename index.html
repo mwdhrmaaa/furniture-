@@ -63,7 +63,7 @@
                     </div>
                     <div class="product-cards">
                         <!-- Product 1 -->
-                        <div class="product-card">
+                        <div class="product-card" data-category="chair" data-description="A minimalist green chair with a sturdy metal frame. Perfect for modern office spaces or dining rooms." data-price="$36" data-title="Green chair with metal">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1974&auto=format&fit=crop" alt="Green chair">
                             </div>
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <!-- Product 2 -->
-                        <div class="product-card">
+                        <div class="product-card" data-category="decor" data-description="Elegant plant stand made from premium oak. Includes a beautiful Saguaro cactus in a ceramic pot." data-price="$20" data-title="Saguaro with Wooden stand">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1964&auto=format&fit=crop" alt="Saguaro stand">
                             </div>
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <!-- Product 3 -->
-                        <div class="product-card">
+                        <div class="product-card" data-category="decor" data-description="Natural corn tree in a woven basket. Comes with a minimalist three-tier wooden rack for display." data-price="$10" data-title="Corn tree with Wooden rack">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1974&auto=format&fit=crop" alt="Corn tree">
                             </div>
@@ -173,6 +173,30 @@
             <p>&copy; 2026 Fundo Furniture. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close">&times;</button>
+            <div class="modal-content">
+                <div class="modal-image-col">
+                    <div class="zoom-wrapper">
+                        <img id="modal-img" src="" alt="Product Detail">
+                    </div>
+                </div>
+                <div class="modal-info-col">
+                    <h2 id="modal-title">Product Title</h2>
+                    <p id="modal-price" class="price">$0.00</p>
+                    <div class="modal-divider"></div>
+                    <p id="modal-description">Product description goes here...</p>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary w-100">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>

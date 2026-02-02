@@ -85,4 +85,57 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset();
         });
     }
+
+    // Modal Interaction
+    const modal = document.getElementById('product-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalPrice = document.getElementById('modal-price');
+    const modalDesc = document.getElementById('modal-description');
+    const modalClose = document.querySelector('.modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
+    const openModal = (data) => {
+        modalImg.src = data.image;
+        modalTitle.textContent = data.title;
+        modalPrice.textContent = data.price;
+        modalDesc.textContent = data.description;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    // Click on product card to open modal
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Prevent opening if clicking on a button inside (if any)
+            if (e.target.closest('.btn')) return;
+
+            const data = {
+                title: card.getAttribute('data-title'),
+                price: card.getAttribute('data-price'),
+                description: card.getAttribute('data-description'),
+                image: card.querySelector('img').src
+            };
+            openModal(data);
+        });
+        
+        // Change cursor to pointer to indicate clickability
+        card.style.cursor = 'pointer';
+    });
+
+    // Close modal triggers
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 });
